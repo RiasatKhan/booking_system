@@ -97,16 +97,12 @@ class queued_classes{
         $this->faculty_id=htmlspecialchars(strip_tags($this->faculty_id));
         $this->class_id=htmlspecialchars(strip_tags($this->class_id));
         $this->class_status=htmlspecialchars(strip_tags($this->class_status));
-       
-        
      
         // bind new values
+        $stmt->bindParam(':class_status', $this->class_status);
         $stmt->bindParam(':faculty_id', $this->faculty_id);
         $stmt->bindParam(':class_id', $this->class_id);
-        $stmt->bindParam(':class_status', $this->class_status);
-       
-        
-     
+            
         // execute the query
         if($stmt->execute()){
             return true;

@@ -1,5 +1,5 @@
 <?php
-class seats{
+class time_slots {
     private $conn;
     private $table_name="time_slots";
 
@@ -26,8 +26,9 @@ class seats{
      
         // execute query
         $stmt->execute();
-     
+        
         return $stmt;
+        
     }
 }
 ?>

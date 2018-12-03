@@ -27,9 +27,10 @@ $queued_classes->class_id = $data->class_id;
 // set queued_classes property values
 $queued_classes->class_status = $data->class_status;
 
- 
+//var_dump($queued_classes);
 // update the queued_classes
-if($queued_classes->update()){
+$update = $queued_classes->update();
+if($update){
  
     // set response code - 200 ok
     http_response_code(200);
