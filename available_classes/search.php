@@ -6,29 +6,29 @@ header("Content-Type: application/json; charset=UTF-8");
 // include database and object files
 include_once '../config/core.php';
 include_once '../config/database.php';
-include_once '../objects/time_slots.php';
+include_once '../objects/available_classes.php';
  
-// instantiate database and time_slots object
+// instantiate database and available_classes object
 $database = new Database();
 $db = $database->getConnection();
  
 // initialize object
-$time_slots = new time_slots($db);
+$available_classes = new available_classes($db);
  
 // get keywords
-$keywords=isset($_GET["slot_id"]) ? $_GET["slot_id"] : "";
+$keyword1=isset($_GET["day"]) ? $_GET["day"] : "";
+$keyword2=isset($_GET["time_slot"]) ? $_GET["time_slot"] : "";
  
-// query time_slots
-$stmt = $time_slots->search($keywords);
-
+// query available_classes
+$stmt = $available_classes->search($keyword1,$keyword2);
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
  
-    // time_slots array
-    $time_slots_arr=array();
-    $time_slots_arr["records"]=array();
+    // available_classes array
+    $available_classes_arr=array();
+    $available_classes_arr["records"]=array();
  
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -39,30 +39,30 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $time_slots_item=array(
-            "slot_id" => $slot_id,
-            "start_time" => $start_time,
-            "end_time" => $end_time
+        $available_classes_item=array(
+            "class_id" => $class_id,
+            "room_number" => $room_number,
+            "day" => $day,
+            "time_slot" => $time_slot
         );
  
-        array_push($time_slots_arr["records"], $time_slots_item);
+        array_push($available_classes_arr["records"], $available_classes_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
-    // show time_slots data
-    echo json_encode($time_slots_arr);
+    // show available_classes data
+    echo json_encode($available_classes_arr);
 }
  
 else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user no time_slots found
+    // tell the user no available_classes found
     echo json_encode(
-        array("message" => "No time_slots found.")
+        array("message" => "No available_classes found.")
     );
-    
 }
 ?>

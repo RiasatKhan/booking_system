@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test Site</title>
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+              <style>
+                  body{
+                      font-size: 17px;
+                      font-family: arial;
+                      background: #f4f4f4;
+                      line-height: 1.5em;
+                  }
+                  header{
+                      background: #333;
+                      color: #fff;
+                      padding: 20px;
+                      text-align: center;
+                      border-bottom: 4px #000 solid;
+                      margin-bottom: 10px;
+                  }
+                  #container{
+                      width: 90%;
+                      margin: auto;
+                      padding: 10px;
+                  }
+              </style>
+    </head>
+    <body>
+        <header>
+            <h1>jquery</h1>
+        </header>
+        <div id="container">
+            <h1 id="heading1">Heading One</h1>
+            <p id="para1">
+                No rebum est sea lorem labore justo nonumy accusam, 
+                est sit vero at dolor erat rebum eos sea. Sed dolor.
+                Dolore labore diam consetetur amet sed rebum aliquyam accusam eirmod, 
+                sadipscing eos et magna dolor labore lorem magna lorem. 
+                Sed sea takimata diam lorem elitr et. Sed lorem sed dolor accusam magna lorem lorem labore. 
+                Dolor ut at sit sed et eos. <span>Amet at sea lorem dolor est, takimata stet et consetetur sea ipsum.</span> 
+                Sed dolor kasd dolor ut elitr dolore diam kasd invidunt. Voluptua takimata tempor ipsum ipsum accusam sed, 
+                justo at sed sanctus invidunt nonumy, et et ipsum erat no ea sed ipsum aliquyam, 
+                clita consetetur rebum magna magna sit nonumy nonumy. Sanctus diam aliquyam kasd voluptua eirmod.
+            </p>
+
+            <h1 class="heading2">Heading Two</h1>
+            <p class="para2">
+                Erat et clita lorem erat sit, no at kasd sed duo aliquyam sit vero, dolore magna vero et ea diam lorem sea aliquyam, 
+                voluptua magna invidunt sanctus dolores, no dolores erat dolore et justo et rebum. At ut nonumy amet et est erat. 
+                Sit et accusam nonumy nonumy. Sit dolor amet et diam sit.<span>Dolor no takimata no tempor sed ipsum at sit erat. At sanctus diam accusam diam et vero,
+                     takimata eos ut.</span> Et amet nonumy duo sed sit. Dolores eos et duo amet ut dolores est, 
+                dolor diam sit aliquyam tempor sanctus, ipsum diam sanctus duo accusam ea tempor gubergren et. Amet dolor lorem gubergren labore justo ipsum duo labore, 
+                clita et voluptua sed gubergren ut lorem labore,.
+            </p>
+
+        </div>
+        <script>
+            $("para#para2 span").css('color','red')
+        
+        </script>
+    </body>
+</html>
